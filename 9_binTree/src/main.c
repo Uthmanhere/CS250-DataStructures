@@ -22,37 +22,32 @@
 
 int main()
 {
-	class_binTree * myTree = get_binTree( 15 );
+	class_binTree * myTree = get_binTree();
 	
-	printf("Let's check if first : %d\n", myTree);
 
-	puts("Allocated!");
-	for (int counter = 10; counter < 20; ++counter)
-	{
-		insertion (myTree, counter);
-	}
+	for (int counter = 10; counter < 13; ++counter)
+		insertion (&myTree, counter);
+	for (int counter = 12; counter < 18; ++counter)
+		insertion (&myTree, counter);
+	
 	for (int counter = 12; counter > 0; --counter)
-	{
-		insertion (myTree, counter);
-	}
-
-	printf("Let's check after insertion : %d\n", myTree);
+		insertion (&myTree, counter);
 
 	puts("Fine for insertion");
 
-	traversal(myTree);
+	traversal(&myTree);
 
 	puts("Okay so this was traversal");
-	for (int counter = -5; counter < 30; ++counter)
+	for (int counter = 4; counter < 30; ++counter)
 	{
-		printf("counter %d\tis\t%d\n", counter, search(myTree, counter));
+		printf("counter %d\tis\t%d\n", counter, search(&myTree, counter));
 		puts("");
 	}
 	
 	puts("So you are afraid of freedom?");
 
 
-
+	deletion(&myTree);
 
 	free(myTree);
 

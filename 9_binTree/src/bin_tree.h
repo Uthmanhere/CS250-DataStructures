@@ -20,8 +20,8 @@
 
 #include "Node.c"
 
-class_binTree *  get_binTree(int);
-void insertion(class_binTree *, int);
-void deletion(class_binTree *);
-bool search(class_binTree *, int);
-void traversal(class_binTree *);
+class_binTree *  get_binTree();
+void insertion(class_binTree **, int);
+void deletion(class_binTree **);
+bool search(class_binTree **, int);
+void traversal(class_binTree **);
