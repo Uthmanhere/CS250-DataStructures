@@ -24,7 +24,7 @@ int main()
 {
 	class_binTree * myTree = get_binTree();
 	
-
+	puts("Inserting 1 to 18 : ");
 	for (int counter = 10; counter < 13; ++counter)
 		insertion (&myTree, counter);
 	for (int counter = 12; counter < 18; ++counter)
@@ -33,23 +33,28 @@ int main()
 	for (int counter = 12; counter > 0; --counter)
 		insertion (&myTree, counter);
 
-	puts("Fine for insertion");
-
+	puts("");
+	puts("Traversal : ");
 	traversal(&myTree);
-
-	puts("Okay so this was traversal");
+	puts("\n\nSearching 4 to 30");
 	for (int counter = 4; counter < 30; ++counter)
 	{
-		printf("counter %d\tis\t%d\n", counter, search(&myTree, counter));
-		puts("");
+		printf("Number %d\tis\t%s\n", counter, search(&myTree, counter) ? "Present" : "Not Present");
 	}
+	puts("");
 	
-	puts("So you are afraid of freedom?");
+	puts("Deletion!");
 
 
 	deletion(&myTree);
-
 	free(myTree);
+	myTree = 0;
+
+
+	puts("Traversal after deletion.");
+	traversal(&myTree);
+	puts("Nothing in the tree");
+	
 
 	return 0;
 }

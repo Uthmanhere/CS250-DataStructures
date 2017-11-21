@@ -3,6 +3,7 @@
  *
  *       Filename:  bin_tree.c
  *
+ * 
  *    Description:  
  *
  *        Version:  1.0
@@ -85,10 +86,15 @@ void deletion(class_binTree ** binTree_this)
 	{
 		deletion(&(*binTree_this)->left);
 		if ((*binTree_this)->left != 0)
+		{
 			free((*binTree_this)->left);
+			(*binTree_this)->left = 0;
+		}
 		deletion(&(*binTree_this)->right);
 		if ((*binTree_this)->right != 0)
+		{
 			free((*binTree_this)->right);
+			(*binTree_this)->right = 0;
+		}
 	}
-
 }
