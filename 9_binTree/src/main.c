@@ -35,7 +35,7 @@ int main()
 
 	puts("");
 	puts("Traversal : ");
-	traversal(&myTree);
+	traversal_in(&myTree);
 	puts("\n\nSearching 4 to 30");
 	for (int counter = 4; counter < 30; ++counter)
 	{
@@ -52,7 +52,7 @@ int main()
 
 
 	puts("Traversal after deletion.");
-	traversal(&myTree);
+	traversal_in(&myTree);
 	puts("Nothing in the tree");
 	
 

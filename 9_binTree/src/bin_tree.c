@@ -64,15 +64,39 @@ bool search (class_binTree ** binTree_this, int data)
 	}
 }
 
-void traversal(class_binTree ** binTree_this)
+void traversal_pre(class_binTree ** binTree_this)
 {
 	if ((*binTree_this) == 0)
 		return;
 	else
 	{
 		printf(" %d", (*binTree_this)->info);
-		traversal(&(*binTree_this)->left);
-		traversal(&(*binTree_this)->right);
+		traversal_pre(&(*binTree_this)->left);
+		traversal_pre(&(*binTree_this)->right);
+	}
+}
+
+void traversal_in(class_binTree ** binTree_this)
+{
+	if ((*binTree_this) == 0)
+		return;
+	else
+	{
+		traversal_in(&(*binTree_this)->left);
+		printf(" %d", (*binTree_this)->info);
+		traversal_in(&(*binTree_this)->right);
+	}
+}
+void traversal_pos(class_binTree ** binTree_this)
+{
+	if ((*binTree_this) == 0)
+		return;
+	else
+	{
+		traversal_pos(&(*binTree_this)->left);
+		traversal_pos(&(*binTree_this)->right);
+		printf(" %d", (*binTree_this)->info);
+
 	}
 }
 

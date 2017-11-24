@@ -24,4 +24,6 @@ class_binTree *  get_binTree();
 void insertion(class_binTree **, int);
 void deletion(class_binTree **);
 bool search(class_binTree **, int);
-void traversal(class_binTree **);
+void traversal_pre(class_binTree **);
+void traversal_in(class_binTree **);
+void traverlal_pos(class_binTree **);
